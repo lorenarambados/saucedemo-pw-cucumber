@@ -1,12 +1,8 @@
-import { Given, When, Then, After } from '@cucumber/cucumber';
-import { chromium } from 'playwright';
+import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import LoginPage from '../../pages/loginPage.js';
 
 Given('I am on the login page', async function () {
-  this.browser = await chromium.launch({ headless: true });
-  this.context = await this.browser.newContext();
-  this.page = await this.context.newPage();
   this.loginPage = new LoginPage(this.page);
   await this.loginPage.navigate();
 });
@@ -30,10 +26,4 @@ Then('I should see a login error message', async function () {
   await expect(errorMessage).toHaveText(
     'Epic sadface: Username and password do not match any user in this service'
   );
-});
-
-After(async function () {
-  if (this.page) await this.page.close();
-  if (this.context) await this.context.close();
-  if (this.browser) await this.browser.close();
 });
