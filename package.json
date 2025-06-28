@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "npx cucumber-js --format json:reports/report.json",
-    "test:negative": "npx cucumber-js --tags @negative --format json:reports/report.json",
-    "test:positive": "npx cucumber-js --tags @positive --format json:reports/report.json",
-    "test:smoke": "npx cucumber-js --tags @smoke --format json:reports/report.json",
-    "report": "node report.mjs"
-  },
+ "scripts": {
+    "test:report": "cucumber-js --format json:reports/report.json && node report.mjs",
+    "test:negative": "cucumber-js  --tags @negative --format json:reports/report.json && node report.mjs",
+    "test:positive": "cucumber-js --tags @positive --format json:reports/report.json && node report.mjs",
+    "test:smoke": "cucumber-js  --tags @smoke --format json:reports/report.json && node report.mjs",
+    "test": "cucumber-js --format json:reports/report.json && node report.mjs"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

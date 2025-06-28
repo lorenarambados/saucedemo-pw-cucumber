@@ -35,16 +35,20 @@ cd saucedemo-pw-cucumber
 npm install
 ```
 
-3. **Run the scenarios:**
+3. **Install Playwright browsers:**
 
 ```bash
-npm run test
+npx playwright install
 ```
 
-4. **Generate and open the HTML test report:**
+4. **Run the scenarios:**
 
 ```bash
-npm run report
+npm run test:report
+npm run test:negative
+npm run test:positive
+npm run test:smoke
+
 ```
 
 > The HTML report will open automatically in your browser:  
