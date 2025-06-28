@@ -1,0 +1,30 @@
+{
+  "name": "saucedemo-pw-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx cucumber-js --format json:reports/report.json",
+    "test:negative": "npx cucumber-js --tags @negative --format json:reports/report.json",
+    "test:positive": "npx cucumber-js --tags @positive --format json:reports/report.json",
+    "test:smoke": "npx cucumber-js --tags @smoke --format json:reports/report.json",
+    "report": "node report.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.53.1"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.0.0",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "npm-run-all": "^4.1.5",
+    "open": "^10.1.2",
+    "playwright": "^1.53.1"
+  }
+}
